@@ -1,11 +1,10 @@
 var express = require('express');
 var fs = require('fs');
-var path = require('path');
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var buf = fs.readFileSync(path.resolve(__dirname, 'index.html'));
+  var buf = fs.readFileSync('index.html');
   var str = buf.toString();
   response.write(str);
 });
